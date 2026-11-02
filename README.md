@@ -1,27 +1,31 @@
-# Asteria Project Hub — Continuous Improvement Prototype
+# Asteria Continuous Improvement Hub
 
-Static prototype for GitHub Pages. Data is currently saved only in each browser via localStorage.
+A lightweight, GitHub Pages-ready task and project board for the Continuous Improvement department.
 
-## V1 structure
-The Continuous Improvement page is organized by **workstream title** rather than a flat task list. Examples include SOPs, 5S Improvements, and Scrap Reduction.
-
-Each workstream shows:
-- Overall completion percentage
-- Current step
-- Due date
-- Number of completed steps
-- Owner and email
-- Expandable step-by-step progress tracker
-- Completed / Current step / Upcoming status
-- Subtasks under each step
+## What this version includes
+- Project-board view inspired by Microsoft Lists / SharePoint board layouts
+- Projects as horizontal buckets / columns
+- Tasks as cards inside each project
+- Task status, owner, email, due date, notes and subtasks
+- Side-panel task editing (no browser prompt boxes)
+- New Project, New Task and New Workspace forms with Cancel, X, Escape and backdrop-close behavior
+- Board, Overview and My Work views
+- Search and status filtering
+- Collapsible project columns
+- Local browser saving for prototype use
+- CSV export structured for later Microsoft Lists / SharePoint import
+- JSON backup export
 
 ## Publish on GitHub Pages
-1. Create a new GitHub repository (for example `asteria-project-hub`).
-2. Upload `index.html`, `styles.css`, and `app.js` to the repository root.
-3. In GitHub: Settings → Pages.
-4. Under Build and deployment choose **Deploy from a branch**.
-5. Select `main` and `/ (root)`, then Save.
-6. GitHub will provide the public Pages URL.
+1. Upload `index.html`, `styles.css`, `app.js`, and `README.md` to the root of your GitHub repository.
+2. Open **Settings → Pages**.
+3. Choose **Deploy from a branch**.
+4. Select **main** and **/(root)**, then save.
 
-## Important
-This prototype is NOT yet appropriate for confidential project data. The next production step is Microsoft Entra ID authentication plus a shared backend/database with authorization rules.
+## Important prototype limitation
+This version saves data in the browser using `localStorage`. It is useful for testing the workflow, but it is **not yet a shared multi-user database**. Do not use confidential production data until Microsoft sign-in and a shared backend are connected.
+
+## SharePoint / Microsoft Lists path
+Use **Export → CSV for SharePoint**. The CSV contains workspace, project, task, owner, email, status, due date, notes and subtask information in a flat format suitable for import/mapping into Microsoft Lists.
+
+For a true shared department task manager, the next version should connect Microsoft Entra ID authentication and either Microsoft Lists / SharePoint or a shared database.
